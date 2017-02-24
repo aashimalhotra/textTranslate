@@ -1,0 +1,10 @@
+html
+	body
+		form
+        	textarea(name='txt', rows='10', cols='50')
+       		br
+        	br
+        	input(type='button', value='Submit', id='select_link')
+        	select(name='sel', value='select')
+                each lang, val in {'auto': 'Automatic','hi': 'hindi','af': 'Afrikaans','sq': 'Albanian', 'ar':'Arabic', 'hy': 'Armenian','az': 'Azerbaijani'}
+                    option(value=val) #{lang}

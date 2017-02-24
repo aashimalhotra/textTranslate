@@ -1,0 +1,13 @@
+script(src="https://code.jquery.com/jquery-3.1.1.min.js")
+script(src="/javascripts/local.js")
+div(style='float:left')
+    form
+        textarea(id='txt1', rows='10', cols='50')
+        br
+        br
+        input(type='button', value='Submit', id='select_link')
+        select(name='sel')
+            each lang, val in {'auto': 'Automatic','hi': 'hindi','af': 'Afrikaans','sq': 'Albanian','ar': 'Arabic','hy': 'Armenian','az': 'Azerbaijani'}
+                option(value=val) #{lang}
+div(style='float:right')
+    textarea(id='txt2', rows='10', cols='50')

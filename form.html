@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>		
+		<script type="text/javascript">
+            $(function(){				
+                $('#select_link').click(function(e){
+                    e.preventDefault();
+                    console.log('select_link clicked');
+		    var data = {
+					txt : $('#txt1').val()
+			    }
+		    $.ajax({
+			type: 'POST',
+			data: JSON.stringify(data),
+		        contentType: 'application/json',
+                        url: 'http://localhost:8081/endpoint',						
+                        success: function(data) {
+                            console.log('success');
+                            console.log(data);
+			    $('#txt2').val(data);
+                        }
+                    });
+                });				
+            });
+        </script>
+    </head>
+    <body>
+        <div style="float:left">
+		<textarea id='txt1' rows='10' cols='50'></textarea>
+		<br><br>
+		<input type='button' value='submit' id='select_link'>
+	</div>    
+	<div style="float:right">
+		<textarea id='txt2' rows='10' cols='50'></textarea>
+	</div>
+    </body>
+</html>

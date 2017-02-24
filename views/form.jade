@@ -1,0 +1,25 @@
+block content
+link(href='/stylesheets/style.css', rel='stylesheet')
+script(src="https://code.jquery.com/jquery-3.1.1.min.js")
+script(src="/javascripts/local.js")
+div(style='float:left')
+    form
+        textarea(id='txt1', rows='10', cols='60', placeholder='Enter Text')
+        br
+        br
+        input(type='button', value='Submit', id='select_link')
+        &nbsp
+        &nbsp
+        select(name='sel')
+            option(val='',selected='selected') Source Language
+            each lang, val in Languages
+                option(value=val) #{lang}
+div(style='float:right')
+    textarea(id='txt2', rows='10', cols='60', placeholder='Translated Text')
+    br
+    br
+    select(name='sel', id='sel1')
+        option(val='',selected='selected') Target Language
+        each lang, val in Languages
+            option(value=val) #{lang}
+div(id='div1', style='visibility:hidden')
